@@ -1,0 +1,83 @@
+.Navbar__nav {
+  display: flex;
+  align-items: center;
+  background-color: #a9e407ee;
+}
+.Navbar__Left {
+  display: flex;
+  align-items: center !important;
+  margin-left: 15px;
+}
+.Navbar__Right {
+  display: flex;
+  align-items: center;
+  margin-right: 15px;
+  margin-left: auto;
+
+  /* padding-left: 10px; */
+}
+.Navbar__Right > p {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.Navbar__IconReact {
+  width: 40px;
+  height: 40px;
+}
+.Navbar__IconLogin {
+  height: 45px !important;
+  width: 45px !important;
+  margin-top: 10px;
+  background-color: white;
+  border-radius: 20px;
+}
+.inputField1 {
+  width: 200px;
+  background-color: #fdb73b;
+}
+.inputField2 {
+  height: 50px !important;
+  width: 150px;
+}
+.Navbar__Middel {
+  margin-left: auto;
+  margin-right: auto;
+  width: 200px !important;
+  height: 100px;
+}
+.style {
+  /* background-color: black; */
+  text-decoration: white;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin-left: 20px;
+  margin-right: 20px;
+
+  color: black;
+}
+.style:hover {
+  font-style: italic;
+  color: black;
+  text-decoration: underline overline black;
+}
+.style:hover:after {
+  opacity: 1;
+  -webkit-transform: scale(1);
+  transform: scale(1);
+}
+
+.style:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  display: flex;
+  height: 1em;
+  width: 100%;
+  border-bottom: 3px solid;
+  margin-top: 10px;
+  opacity: 0;
+  -webkit-transition: opacity 0.5s, -webkit-transform 0.5s;
+  transition: opacity 0.5s, transform 0.5s;
+  -webkit-transform: scale(0, 1);
+  transform: scale(0, 1);
+}
