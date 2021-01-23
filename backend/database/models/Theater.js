@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const validator = require('validator');
 
 const theatersSchema = new mongoose.Schema({
     theaterName: {
@@ -21,18 +22,33 @@ const theatersSchema = new mongoose.Schema({
     },
     theaterEmail: {
         type: String,
+        unique: true,
         required: true,
         trim: true,
+        validate(value) {
+            if (!validator.isEmail(value)) {
+                throw new Error('email is invalid please enter in correct formate');
+            }
+        }
 
     },
     theaterMobile: {
-        type: String
+        type: String,
+        unique: true,
+        trim: true,
+        validate(value) {
+            if (!validator.isMobilePhone(value)) {
+                throw new Error('Phone is invalid please enter in correct formate');
+            }
+        }
     },
     theaterAdd: {
-        type: String
+        type: String,
+        trim: true
     },
     noOfScreen: {
-        type: Number
+        type: Number,
+        trim: true
     }
 });
 

@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
+const validator = require('validator');
 
-const queriesSchema = new mongoose.Schema({
+const querySchema = new mongoose.Schema({
     userName: {
         type: String,
         required: true
@@ -30,9 +31,13 @@ const queriesSchema = new mongoose.Schema({
         type: String,
         trim: true,
         required: true
+    },
+    QueryAnswer:{
+        type:String,
+        trim: true
     }
 
 });
 
-const Queris = mongoose.model("Queris", queriesSchema);
-module.exports = Queris;
+const Query = mongoose.model("Query", querySchema);
+module.exports = Query;

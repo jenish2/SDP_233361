@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-
+const validator = require('validator');
 
 const { Schema } = mongoose;
 const customerSchema = mongoose.Schema({
@@ -16,7 +16,8 @@ const customerSchema = mongoose.Schema({
     username: {
         type: String,
         required: true,
-        trim: true
+        trim: true,
+        unique:true
     },
     password: {
         type: String,
@@ -25,13 +26,24 @@ const customerSchema = mongoose.Schema({
     },
     email: {
         type: String,
+        unique: true,
         required: true,
-        trim: true
+        trim: true,
+        validate(value) {
+            if (!validator.isEmail(value)) {
+                throw new Error('email is invalid please enter in correct formate');
+            }
+        }
     },
     mobile: {
         type: String,
-        required: true,
-        trim: true
+        unique: true,
+        trim: true,
+        validate(value) {
+            if (!validator.isMobilePhone(value)) {
+                throw new Error('Phone is invalid please enter in correct formate');
+            }
+        }
     },
     image: {
         data: Buffer,

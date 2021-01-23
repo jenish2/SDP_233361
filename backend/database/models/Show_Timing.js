@@ -5,19 +5,22 @@ const showSchema = new mongoose.Schema({
     ShowDate: {
         type: Date,
         required: true,
+        trim: true
     },
     startTime: {
         type: String,
         required: true,
-        trim: true,
+        trim: true
     },
     endTime: {
         type: String,
         required: true,
+        trim: true
     },
     price: {
         type: Number,
-        required: true
+        required: true,
+        trim: true
     },
     theaterName: {
         type: String,

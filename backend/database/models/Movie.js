@@ -1,10 +1,12 @@
 const mongoose = require('mongoose');
 
+
 const movieSchema = new mongoose.Schema({
     movieName: {
         type: String,
         required: true,
-        trim: true
+        trim: true,
+        unique: true
     },
     description: {
         type: String,
